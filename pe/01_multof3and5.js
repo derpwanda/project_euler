@@ -56,24 +56,58 @@ console.log(multi35(1000)) */
 
 //SECOND PASS without an array/reducer
 
-const multi35 = (num) => {
-    // create a counter
-    let count = 0
-    // create an accumulator
-    let sum = 0
+// const multi35 = (num) => {
+//     // create a counter
+//     let count = 0
+//     // create an accumulator
+//     let sum = 0
 
-    //as long as count is less than num...
-    while (count < num) {
-        // and is divisible by 3 and 5...
-        if (count % 3 == 0 || count % 5 == 0) {
-            // add count to sum
-            sum += count
-        }
-        // increment count to check the next number
-        count++
-    }
-    // when count == num, exit the loop and return the sum
-    return sum
+//     //as long as count is less than num...
+//     while (count < num) {
+//         // and is divisible by 3 and 5...
+//         if (count % 3 == 0 || count % 5 == 0) {
+//             // add count to sum
+//             sum += count
+//         }
+//         // increment count to check the next number
+//         count++
+//     }
+//     // when count == num, exit the loop and return the sum
+//     return sum
+// }
+
+// console.log(multi35(1000))
+
+
+// def summa(r):
+
+//     a3 = (r-1)//3
+//     a5 = (r-1)//5
+//     a15 = (r-1)//15
+
+//     sum3 = (3+3*a3)*a3/2
+//     sum5 = (5+5*a5)*a5/2
+//     sum15 = (15+15*a15)*a15/2
+
+//     return int(sum3 + sum5 - sum15)
+
+// javascript version of a pe solution
+const summa = (num) => {
+    let a3 = (num - 1) / 3
+    console.log("a3", a3)
+    let a5 = Math.floor((num - 1) / 5)
+    console.log("a5", a5)
+    let a15 = Math.floor((num - 1) / 15)
+    console.log("a15", a15)
+
+    let sum3 = (3 + 3 * a3) * a3 / 2
+    console.log("sum3", sum3)
+    let sum5 = (5 + 5 * a5) * a5 / 2
+    console.log("sum5", sum5)
+    let sum15 = (15 + 15 * a15) * a15 / 2
+    console.log("sum15", sum15)
+
+    return (sum3 + sum5 - sum15)
 }
 
-console.log(multi35(1000))
+console.log(summa(1000))
